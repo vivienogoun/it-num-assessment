@@ -8,12 +8,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vogoun.it_num_assessment.models.Ticket;
 import com.vogoun.it_num_assessment.repositories.TicketRepository;
 
 @RestController
+@RequestMapping("/api")
 public class TicketController {
     private final TicketRepository repository;
 
@@ -46,7 +48,7 @@ public class TicketController {
                     return repository.save(newTicket);
                 });
     }
-    
+
     @DeleteMapping("/tickets/{id}")
     void deleteTicket(@PathVariable Long id) {
         repository.deleteById(id);
