@@ -74,4 +74,31 @@ curl --location 'http://127.0.0.1:8080/api/auth/signup' \
 - Accéder au frontend et se connecter avec l'utilisateur créé
 - Vérifier les fonctionnalités
 
+## Choix techniques effectués
+
+- Frontend: Nuxt.js (comme demandé)
+- Backend: Spring Boot (comme demandé)
+- Base de données: MySQL (pas de motivation particulière, PostgreSQL aurait pu être utilisé pour obtenir le même résultat)
+
+## Améliorations possibles
+
+- Backend
+  - Définir un format standardisé pour toutes les réponses de l'api. Par exemple:
+
+  ```json
+  {
+    "code": 200,
+    "message": "message",
+    "data": {}
+  }
+  ```
+
+  - Mieux gérer les erreurs (non authentifié, non autorisé, id de ticket invalide, etc...) et renvoyer des réponses claires incluant des codes d'erreur prédéfinis.
+  - Implémenter la pagination sur `/api/tickets`
+
+- Frontend
+  - Persister l'authentification (à l'aide du `localStorage` par exemple) au-delà du rafraichissement de page.
+  - Implémenter la déconnexion
+  - Améliorer la gestion de l'état de l'application (authentification, tickets) à l'aide de `useState` ou `pinia`
+
 Merci!
