@@ -1,4 +1,4 @@
-# Full Stack Tickets Management App
+# Assessment
 
 ## Instructions d'installation et d'exécution du projet
 
@@ -23,6 +23,7 @@ cp .env.example .env
 ```
 
 Remplir les valeurs manquantes du .env: `MYSQL_PASSWORD`, `MYSQL_ROOT_PASSWORD` et `JWT_SECRET`
+
 Note: Le `JWT_SECRET` doit respecter les standards requis. Peut être généré avec un outil en ligne.
 
 ```bash
