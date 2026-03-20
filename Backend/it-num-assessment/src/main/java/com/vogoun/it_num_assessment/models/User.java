@@ -1,10 +1,13 @@
 package com.vogoun.it_num_assessment.models;
 
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -18,6 +21,9 @@ public class User {
 
     @Column(nullable = false)
     private String password;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Ticket> tickets;
 
     User() {
     }
@@ -38,6 +44,10 @@ public class User {
 
     public String getPassword() {
         return this.password;
+    }
+
+    public Set<Ticket> getTickets() {
+        return this.tickets;
     }
 
     public void setId(Integer id) {
